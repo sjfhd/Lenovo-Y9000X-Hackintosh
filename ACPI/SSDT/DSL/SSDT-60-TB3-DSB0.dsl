@@ -1349,7 +1349,8 @@ DefinitionBlock ("", "SSDT", 2, "SUKA", "TB30", 0x00002000)
             {
                     ,   2, 
                 L23X,   1, 
-                L23D,   1
+                // L23D,   1
+                L23Y,   1 // NsLookup: Type mismatch on L23D (Method), searching for (RegionField)
             }
 
             OperationRegion (DMIH, PCI_Config, 0x0324, One)
@@ -1444,10 +1445,10 @@ DefinitionBlock ("", "SSDT", 2, "SUKA", "TB30", 0x00002000)
                     Return (SECB) /* \_SB.PCI0.RP17.PXSX.SECB */
                 }
 
-                Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
-                {
-                    Return (Zero)
-                }
+                // Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
+                // {
+                //    Return (Zero)
+                // }
 
                 /**
                 * Enable downstream link
